@@ -33,24 +33,24 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex-none w-[240px] bg-gray-700">
-        <div className="flex gap-2 items-center px-[10px] h-12 shadow-sm shadow-gray-900">
+      <div className="flex-none flex flex-col w-[240px] bg-gray-700">
+        <div className="flex flex-shrink-0 gap-2 items-center px-[10px] h-12 shadow-sm shadow-gray-900">
           <button className="whitespace-nowrap text-ellipsis overflow-hidden rounded-[4px] text-sm font-medium bg-gray-800 px-[6px] py-[1px] text-gray-200 leading-5">
             Rechercher/lancer une conversation
           </button>
         </div>
-        <div className="flex flex-col px-2 ">
-          {Array.from({ length: 10 }).map((_, index) => (
+        <div className={cn("flex flex-col px-2 gap-4 pt-4 overflow-y-auto", styles.noScrollbar)}>
+          {Array.from({ length: 30 }).map((_, index) => (
             <div key={index} className="flex gap-4">
               <div className="w-6 h-6">
                 <PrivateIcon />
               </div>
-              Amis
+              Channel {index}
             </div>
           ))}
         </div>
       </div>
-      <div className="flex-1 flex flex-col bg-gray-500 relative" style={{ fontFamily: "gg sans" }}>
+      <div className="flex-1 flex flex-col bg-gray-500 relative">
         <div className="flex-none flex gap-2 items-center sticky top-0 px-[10px] h-12 shadow-sm shadow-gray-900">
           Titre
         </div>
